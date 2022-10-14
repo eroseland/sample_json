@@ -1,0 +1,84 @@
+{
+	"Cluster": "ecs-cluster",
+	"TaskARN": "arn:aws:ecs:us-east-1:some-account:task/ecs-cluster/some-id",
+	"Family": "ecs-cluster-data-plane-tsk",
+	"Revision": "156",
+	"DesiredStatus": "RUNNING",
+	"KnownStatus": "RUNNING",
+	"PullStartedAt": "2022-09-22T20:18:32.85218043Z",
+	"PullStoppedAt": "2022-09-22T20:18:54.868316475Z",
+	"AvailabilityZone": "us-east-1c",
+	"LaunchType": "EC2",
+	"Containers": [
+		{
+			"DockerId": "docker-id",
+			"Name": "container-name-dp",
+			"DockerName": "docker-name",
+			"Image": "image:latest",
+			"ImageID": "image-id",
+			"Ports": [
+				{
+					"ContainerPort": 8000,
+					"Protocol": "tcp",
+					"HostPort": 8000,
+					"HostIp": "0.0.0.0"
+				},
+				{
+					"ContainerPort": 8000,
+					"Protocol": "tcp",
+					"HostPort": 8000,
+					"HostIp": "::"
+				},
+				{
+					"ContainerPort": 8443,
+					"Protocol": "tcp",
+					"HostPort": 8443,
+					"HostIp": "0.0.0.0"
+				},
+				{
+					"ContainerPort": 8443,
+					"Protocol": "tcp",
+					"HostPort": 8443,
+					"HostIp": "::"
+				}
+			],
+			"Labels": {
+				"com.amazonaws.ecs.cluster": "ecs-cluster",
+				"com.amazonaws.ecs.container-name": "container-name-dp",
+				"com.amazonaws.ecs.task-arn": "arn:aws:ecs:us-east-1:some-account:task/ecs-cluster/some-id",
+				"com.amazonaws.ecs.task-definition-family": "ecs-cluster-data-plane-tsk",
+				"com.amazonaws.ecs.task-definition-version": "156"
+			},
+			"DesiredStatus": "RUNNING",
+			"KnownStatus": "RUNNING",
+			"Limits": {
+				"CPU": 512,
+				"Memory": 1024
+			},
+			"CreatedAt": "2022-09-22T20:18:54.8837905Z",
+			"StartedAt": "2022-09-22T20:19:01.287670525Z",
+			"Type": "NORMAL",
+			"Volumes": [
+				{
+					"Source": "/volume",
+					"Destination": "/volume"
+				}
+			],
+			"LogDriver": "awslogs",
+			"LogOptions": {
+				"awslogs-group": "ecs-cluster-dataplane",
+				"awslogs-region": "us-east-1",
+				"awslogs-stream": "ecs-cluster-ecs-task-data-plane/ecs-clsuter-dp/some-id"
+			},
+			"ContainerARN": "arn:aws:ecs:us-east-1:some-account:container/ecs-cluster/some-id/another-id",
+			"Networks": [
+				{
+					"NetworkMode": "bridge",
+					"IPv4Addresses": [
+						"172.17.0.3"
+					]
+				}
+			]
+		}
+	]
+}
